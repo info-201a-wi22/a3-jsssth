@@ -1,0 +1,50 @@
+---
+title: "Disproportional and Racist: Black People and the American Prison System"
+author: "Jesse Ocampo"
+date: "2/25/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library("tidyverse")
+library("knitr")
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+knitr::opts_knit$set(root.dir = "../source")
+```
+
+```{r, echo = FALSE, include = FALSE}
+source("analysis.R")
+```
+
+## 1. Introduction:
+While most people believe that the American justice system is color blind and without fault, that's simply not the case. The law makers who set up who laws affect have disproportionately targeted one group of people in particular. It is my hope that my usage of visualizations and hard facts in this report will help you consider that a problem exists. I have elected to primarily focus on comparing prison populations of White and Black people across a span of ten years, starting from 2000 to 2010. I have done so because these years surround George W. Bush's presidency, as well as follow the years after the national tragedy of September 11.
+
+
+## 2. Summary Information:
+To establish a baseline, `r highest_jail_prop_year` is the year with the overall highest **jail** population with as many as `r highest_jail_pop` people serving time. Just a year before that, in `r highest_prison_prop_year`, we have the year with the highest ratio of people in **prison**. Incidentally, `r highest_prison_pop` is the year with the highest overall number of people behind bars, with a whopping `r highest_prison_pop` people serving time in prison.
+
+
+## 3. Trends over time chart
+
+```{r, echo = FALSE}
+plot(chart_one)
+```
+
+Here we run into our first problem. The patter in the number of people who are in jail is not what someone may expect; the population of White and Black people in jail is almost the same. This would be understandable if the overall population of Black and White were similar but that is not the case. Black people are put in jail at a disproportionate rate than White people. It is important to note how much lower the green line that represents Latinx is compared to the line that represents Black people.
+
+
+## 4. Variable comparison chart  
+
+```{r, echo = FALSE}
+plot(chart_two)
+```
+
+This scatter plot graph further emphasizes the disproportion brought up in the trends over time chart. No, you are not reading the points incorrectly. There is a greater amount of black people in prison than there are white people in prison. Again, it would be remiss of me to not mention that the population of Black people in America is not higher than the population of White people. Yet the data provided by the Vera Institute of Justice shows us that there is something very wrong with how we police minorities.
+
+## 5. Map 
+```{r, echo = FALSE}
+plot(percent_black_jail_map)
+```
+
+Finally we have a map of the US detailing the population of Black people in jail across the different states in 2008. I selected 2008 because if you remember, this is the year with the highest overall population of people behind bars. While normally raw number maps do not provide very interesting data, or least not as interesting as percentage or proportion to 100k, we have some notable states with surprisingly high Black populations in jail. Most notable of which are Georgia, Illinois, and New work. While these states are not outcompeteing California, Texas, and Florida in their jail population, they are highest than expected.
+
